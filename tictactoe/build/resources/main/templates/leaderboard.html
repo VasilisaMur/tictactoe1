@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>TicTacToe</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link th:href="@{css/style.css}" rel="stylesheet" />
+    <script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container mt-2">
+    <nav class="navbar navbar-expand-lg bg-light shadow">
+        <a class="navbar-brand text-dark m-2" href="/main">
+            <h4><i class="bi bi-chat-left"></i>TicTacToe</h4>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="/play">Play</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark " href="/leaderboard">Leaderboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-danger" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Wins</th>
+            <th scope="col">Draws</th>
+            <th scope="col">Losses</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="stat : ${statistics}">
+            <th th:text="${stat.getUser().getUsername()}">1</th>
+            <td th:text="${stat.wins}">1</td>
+            <td th:text="${stat.draws}">1</td>
+            <td th:text="${stat.losses}">1</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>

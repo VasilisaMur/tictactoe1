@@ -1,0 +1,76 @@
+html{
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+.data{
+    padding: 30px;
+    margin:30px;
+}
+.navbar-nav a{
+	color: rgb(0, 0, 0);
+}
+.navbar-nav a:hover {
+	background: #8AB8CC;
+}
+
+.header-h3 h3 {
+    position: relative;
+    padding-bottom: .5rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #00838f;
+  }
+  .header-h3 h3::before {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #00838f;
+    bottom: .25rem;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%);
+  }
+  .header-h3 h3::after {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #00838f;
+    bottom: 0;
+    left: 50%;
+    width: 15%;
+    transform: translateX(-50%);
+  }
+
+.img1{
+    float:left;
+    margin: 4px 10px 2px 0px;
+    width: 250px;
+    height: 160px;
+}
+
+.pills {
+    margin-left: 0;
+    list-style: none;
+    counter-reset: li;
+  }
+  .pills li {
+    padding: 10px 0;
+    position: relative;
+    margin-bottom: 0.75em;
+    padding-left: 1em;
+    background: #E3DEDC;
+  }
+  .pills li:before {
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -1.5em;
+    width: 1.875em;
+    text-align: center;
+    font-weight: bold;
+    background: powderblue;
+    border-bottom-left-radius: 70em;
+    border-top-left-radius: 70em;
+    counter-increment: li;
+    content: counter(li);
+  }
